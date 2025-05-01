@@ -1,7 +1,7 @@
 import os
 import time
 import subprocess
-from os.path import dirname
+from os.path import dirname, join, abspath
 from functools import partial
 
 import psutil
@@ -9,7 +9,7 @@ from concurrent.futures import ProcessPoolExecutor
 
 
 MAX_NUM_WORKERS = round(0.75 * psutil.cpu_count())
-DEFAULT_TIMEOUT = 60
+DEFAULT_TIMEOUT = 60.0
 MIN_CPU_USE_INTERVAL = 0.01
 DEFAULT_MAX_CPU_ZERO_COUNT = 50
 DEFAULT_WORKERS_DIR = os.environ.get("ANAREDE_WORKERS_DIR", None)
@@ -23,7 +23,16 @@ def run_pwf_file(pair, num_workers=MAX_NUM_WORKERS, timeout=DEFAULT_TIMEOUT, cpu
 
     time.sleep((5 + worker) * cpu_use_interval)
 
-    num_files_start = len(os.listdir(dirname(pwf_file)))
+    files_in_dir = os.listdir(dirname(pwf_file))
+    for filename in files_in_dir:
+        if filename in ["pv.plt", "Qlim.out", "Relat.out"] or ".txt" in filename or ".TXT" in filename:
+            try:
+                os.remove(abspath(join(dirname(pwf_file), filename)))
+            except FileNotFoundError:
+                print(f"Arquivo {filename} nao encontrado.")
+    files_in_dir = os.listdir(dirname(pwf_file))
+
+    num_files_start = len(files_in_dir)
 
     process = subprocess.Popen(
         cmd
