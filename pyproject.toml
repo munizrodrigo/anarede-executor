@@ -1,0 +1,21 @@
+[project]
+name = "anarede-executor"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "João Rodrigo Muniz",email = "joao.muniz@usp.br"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "easygui (>=0.98.3,<0.99.0)",
+    "psutil (>=7.0.0,<8.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "anarede_executor", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
