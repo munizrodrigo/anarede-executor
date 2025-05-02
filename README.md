@@ -25,7 +25,13 @@ executável para acelerar o processamento de arquivos de fluxo de carga.
 
 ## 📦 Instalação
 
-Clone este repositório:
+Recomenda-se instalar usando o pip:
+
+```bash
+pip install git+https://github.com/munizrodrigo/anarede-executor
+```
+
+Mas **apenas se você quiser ter acesso em um local específico da sua máquina**, clone este repositório:
 
 ```bash
 git clone https://github.com/munizrodrigo/anarede-executor
@@ -60,7 +66,7 @@ run_anarede(pwf_files, num_workers=8) # Execute os arquivos em paralelo usando 8
 ```python
 import time
 from os.path import dirname, join, abspath
-from src.anarede_executor import install_workers, is_installed, run_anarede
+from anarede_executor import install_workers, is_installed, run_anarede
 
 
 if __name__ == "__main__":
