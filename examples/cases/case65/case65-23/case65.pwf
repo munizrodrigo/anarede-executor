@@ -219,4 +219,10 @@ ULOG
 4
 case65-cpf.txt
 EXIC
+ULOG
+4
+case65-cpfctg.txt
+EXCA
+AREA     1 A AREA     2                                                                                                             
+99999
 FIM
