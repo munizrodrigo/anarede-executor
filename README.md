@@ -18,7 +18,7 @@ executável para acelerar o processamento de arquivos de fluxo de carga.
 
 ## ✅ Pré-requisitos
 
-- Python 3.8 ou superior (testado apenas no Python 3.13)
+- Python 3.8 ou superior
 - Executável do ANAREDE disponível (e com permissão de execução)
 
 ---

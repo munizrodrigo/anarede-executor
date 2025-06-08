@@ -6,7 +6,7 @@ authors = [
     {name = "João Rodrigo Muniz",email = "joao.muniz@usp.br"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.8"
 dependencies = [
     "easygui (>=0.98.3,<0.99.0)",
     "psutil (>=7.0.0,<8.0.0)"

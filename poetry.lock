@@ -38,5 +38,5 @@ test = ["pytest", "pytest-xdist", "setuptools"]
 
 [metadata]
 lock-version = "2.1"
-python-versions = ">=3.13"
-content-hash = "3a3b43b8581b5d38182ca1cab96f5ebce5a16a264f5fe322b6c780dd93aa1725"
+python-versions = ">=3.8"
+content-hash = "49fa37095a556b0881f48b4a3d8c11112d8bc5457c93fe29cc09999a0bfb437b"
