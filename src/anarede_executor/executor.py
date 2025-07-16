@@ -19,7 +19,7 @@ def run_pwf_file(pair, num_workers=MAX_NUM_WORKERS, timeout=DEFAULT_TIMEOUT, cpu
                  max_cpu_zero_count=DEFAULT_MAX_CPU_ZERO_COUNT, worker_dir=DEFAULT_WORKERS_DIR):
     worker, anarede_path, pwf_file = pair
     cmd = [anarede_path, pwf_file]
-    print(f"Executando: {' '.join(cmd)}")
+    # print(f"Executando: {' '.join(cmd)}")
 
     time.sleep((5 + worker) * cpu_use_interval)
 
@@ -108,5 +108,5 @@ def run_anarede(pwf_files, num_workers=MAX_NUM_WORKERS, timeout=DEFAULT_TIMEOUT,
     with ProcessPoolExecutor(max_workers=num_workers) as executor:
         results = executor.map(execute_anarede, pairs)
 
-    for result in results:
-        print(result)
+    # for result in results:
+    #     print(result)
