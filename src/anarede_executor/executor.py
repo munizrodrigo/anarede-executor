@@ -81,7 +81,8 @@ def run_pwf_file(pair, num_workers=MAX_NUM_WORKERS, timeout=DEFAULT_TIMEOUT, cpu
 
     time.sleep(2 * cpu_use_interval)
 
-    return f"{pwf_file} finalizado com {anarede_path}"
+    # return f"{pwf_file} finalizado com {anarede_path}"
+    return None
 
 
 def distribute_pwf_files(pwf_files, workers_paths):
